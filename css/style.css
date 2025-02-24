@@ -1,0 +1,597 @@
+@import "./plano.css";
+
+/* Reset estilos */
+body {
+  margin: 0px;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0px;
+}
+
+/* Reset lista */
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.container-flex {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-bg {
+  background: #000;
+}
+
+.flex-itens {
+  display: flex;
+  gap: 30px;
+}
+
+.flex-itens a {
+  text-decoration: none;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, alpha);
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.flex-itens a:hover {
+  color: #ccc;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Estilos para o menu hamburguer e menu lateral */
+.menu-hamburguer {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.linha {
+  width: 30px; /* Largura das linhas do menu */
+  height: 3px; /* Altura das linhas do menu */
+  background-color: #fff; /* Cor das linhas */
+  margin: 0.4rem 0.2rem; /* Espaçamento entre as linhas */
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Esconde o menu lateral fora da tela */
+  width: 70%; /* Ocupa até 70% da largura da tela */
+  max-width: 300px; /* Largura máxima para telas maiores */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Preto com transparência */
+  transition: left 0.3s ease; /* Transição suave ao abrir/fechar */
+  z-index: 1000;
+  padding: 0.5rem; /* Padding geral */
+}
+
+.menu-lateral.open {
+  left: 0; /* Faz o menu aparecer */
+}
+
+.menu-lateral ul {
+  padding-top: 0.5rem; /* Espaçamento superior */
+  display: flex;
+  flex-direction: column; /* Links empilhados verticalmente */
+  align-items: flex-start; /* Alinha os links à esquerda */
+  width: auto;
+  margin-top: 0.5rem;
+}
+
+/* Estilo dos itens do menu lateral */
+.menu-lateral li {
+  margin-bottom: 0.5rem; /* Espaçamento entre os itens */
+}
+
+.menu-lateral a {
+  display: block; /* Faz os links ocuparem toda a largura disponível */
+  color: #fff; /* Cor dos links */
+  text-decoration: none; /* Remove o sublinhado */
+  font-family: "Poppins", sans-serif; /* Fonte dos links */
+  font-weight: 500; /* Peso da fonte */
+  font-size: 0.9rem; /* Tamanho da fonte ajustado para responsividade */
+  padding: 0.75rem 0.5rem; /* Espaçamento interno dos links */
+  border-radius: 0.25rem; /* Bordas arredondadas */
+  transition: 0.3s ease background-color, 0.3s ease color; /* Transição suave para hover */
+}
+
+.menu-lateral a:hover {
+  color: #ccc; /* Cor do texto ao passar o mouse */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fundo claro ao passar o mouse */
+}
+
+/* Botão de fechar no menu lateral */
+#closeMenu {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+/* Media query para telas menores que 800px (celulares e tablets) */
+@media (max-width: 800px) {
+  .flex-itens {
+    display: none;
+  }
+
+  .menu-hamburguer {
+    display: flex;
+  }
+}
+
+/* Media query para telas menores que 480px (celulares muito pequenos) */
+@media (max-width: 480px) {
+  .header-bg img {
+    height: auto;
+  } /* Ajusta a altura da imagem do logotipo em telas pequenas */
+}
+
+/* Reset estilos */
+body {
+  margin: 0px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0px;
+}
+
+/* Reset lista */
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.container-flex {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-bg {
+  background: #000;
+}
+
+.flex-itens {
+  display: flex;
+  gap: 30px;
+}
+
+.flex-itens a {
+  text-decoration: none;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, alpha);
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.flex-itens a:hover {
+  color: #ccc;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.descricao-intro {
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 170px;
+}
+
+.bg-introducao {
+  position: relative;
+  background-image: url("../img/foto-intro.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 781px;
+  background-position: center top;
+}
+
+.descricao-intro {
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 170px;
+  text-align: center;
+}
+
+.titulo-intro {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 4rem;
+  color: #d1cccc;
+  line-height: 1.125;
+}
+
+.bg-introducao a {
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.05rem;
+  font-size: 1.5rem;
+  background-color: rgba(58, 57, 57, 0.8);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  margin-top: 40px;
+}
+
+.bg-introducao a:hover {
+  background-color: #000;
+}
+
+/* Estilos para o menu hamburguer e menu lateral */
+.menu-hamburguer {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.linha {
+  width: 30px; /* Largura das linhas do menu */
+  height: 3px; /* Altura das linhas do menu */
+  background-color: #fff; /* Cor das linhas */
+  margin: 0.4rem 0.2rem; /* Espaçamento entre as linhas */
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Esconde o menu lateral fora da tela */
+  width: 70%; /* Ocupa até 70% da largura da tela */
+  max-width: 300px; /* Largura máxima para telas maiores */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Preto com transparência */
+  transition: left 0.3s ease; /* Transição suave ao abrir/fechar */
+  z-index: 1000;
+  padding: 0.5rem; /* Padding geral */
+}
+
+.menu-lateral.open {
+  left: 0; /* Faz o menu aparecer */
+}
+
+.menu-lateral ul {
+  padding-top: 0.5rem; /* Espaçamento superior */
+  display: flex;
+  flex-direction: block;
+  flex-wrap: no-wrap;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  margin-top: 0.5rem;
+}
+
+/* Estilo dos itens do menu lateral */
+.menu-lateral li {
+  margin-bottom: 0.5rem; /* Espaçamento entre os itens */
+  width: 100%; /* Garante que o item ocupe toda a largura disponível */
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2); /* Linha separadora abaixo de cada item */
+}
+
+.menu-lateral a {
+  display: block; /* Faz os links ocuparem toda a largura disponível */
+  color: #fff; /* Cor dos links */
+  text-decoration: none; /* Remove o sublinhado */
+  font-family: "Poppins", sans-serif; /* Fonte dos links */
+  font-weight: 500; /* Peso da fonte */
+  font-size: 0.9rem; /* Tamanho da fonte ajustado para responsividade */
+  padding: 0.75rem 0.5rem; /* Espaçamento interno dos links */
+  transition: 0.3s ease background-color, 0.3s ease color; /* Transição suave para hover */
+}
+
+.menu-lateral a:hover {
+  color: #ccc; /* Cor do texto ao passar o mouse */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fundo claro ao passar o mouse */
+}
+
+/* Botão de fechar no menu lateral */
+#closeMenu {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+/* Media query para telas menores que 800px (celulares e tablets) */
+@media (max-width: 800px) {
+  .flex-itens {
+    display: none;
+  }
+
+  .menu-hamburguer {
+    display: flex;
+  }
+}
+
+/* Media query para telas menores que 480px (celulares muito pequenos) */
+@media (max-width: 480px) {
+}
+
+/* responsivo introdução */
+@media (max-width: 480px) {
+  .titulo-intro {
+    font-size: 2.5rem;
+  }
+
+  .descricao-intro a {
+    font-size: 1.2rem;
+  }
+
+  .bg-introducao {
+    height: 600px;
+  }
+}
+
+@media (max-width: 380px) {
+  .titulo-intro {
+    font-size: 2.2rem;
+  }
+
+  .descricao-intro a {
+    font-size: 1.2rem;
+  }
+
+  .bg-introducao {
+    height: 600px;
+  }
+}
+
+@media (max-width: 330px) {
+  .titulo-intro {
+    font-size: 1.8rem;
+  }
+
+  .descricao-intro a {
+    font-size: 0.8rem;
+  }
+
+  .bg-introducao {
+    height: 600px;
+  }
+
+  .marca {
+    width: 160px;
+    height: 150px;
+  }
+}
+
+/* estilos - história */
+/* Fundo da seção */
+.bg-historia {
+  position: relative;
+  background: #fff; /* Fundo branco */
+  color: #333; /* Texto em cinza escuro para contraste */
+  padding: 100px 20px;
+}
+
+/* Wrapper para alinhar os elementos */
+.historia-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid principal */
+.grid-historia {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  align-items: center;
+}
+
+/* Estilização da imagem */
+.container-img {
+  position: relative;
+}
+
+.image-overlay {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden; /* Para manter a imagem dentro do círculo */
+  box-shadow: inset -10px -10px 30px rgba(255, 255, 255, 0.1),
+    inset 10px 10px 30px rgba(0, 0, 0, 0.5), 0px 15px 40px rgba(0, 0, 0, 0.3); /* Efeitos de luz e sombra */
+}
+
+.image-overlay img {
+  width: 100%;
+  height: auto;
+}
+
+/* Título estilizado */
+.titulo-historia {
+  font-family: "Arial", sans-serif; /* Fonte sans-serif */
+  font-size: 3.5rem;
+  line-height: 1.2;
+  color: #333; /* Cor cinza escuro */
+  position: relative; /* Necessário para a barra decorativa */
+}
+
+.titulo-historia::after {
+  content: ""; /* Elemento decorativo abaixo do título */
+  display: block;
+  width: 100px; /* Comprimento da barra decorativa */
+  height: 4px; /* Espessura da barra decorativa */
+  background-color: #333; /* Cor da barra decorativa (cinza escuro) */
+  margin-top: 10px; /* Espaçamento entre o título e a barra */
+}
+
+/* Texto do parágrafo */
+.texto-historia {
+  font-family: "Arial", sans-serif; /* Fonte sans-serif */
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Assinatura estilizada */
+.assinatura-historia {
+  font-family: "Arial", serif; /* Fonte serif diferente para a assinatura */
+  font-style: normal;
+  font-size: 1.1rem; /* Tamanho da fonte da assinatura */
+  margin-top: 20px; /* Espaçamento acima da assinatura */
+  line-height: 1.5;
+}
+
+/* Elementos decorativos flutuantes */
+.floating-circle-large,
+.floating-circle-small {
+  position: absolute;
+}
+
+.floating-circle-large {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  top: -150 px;
+}
+
+.floating-circle-small {
+  width: 150 px;
+  height: 150 px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  bottom: -75 px;
+  right: -75 px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .grid-historia {
+    grid-template-columns: 1fr; /* Empilha colunas em telas menores */
+    gap: 30px;
+  }
+
+  .titulo-historia {
+    font-size: 2.5rem; /* Cabeçalho menor em telas menores */
+  }
+}
+
+/* css diferecial */
+
+.titulo-diferencial {
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  line-height: 1.3;
+  font-weight: 600;
+  margin-bottom: 60px;
+  font-size: 3rem;
+}
+
+.titulo-diferencial span {
+  color: #df1a00;
+}
+
+.flex-diferencial {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.container-itens p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+.container-itens {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container-itens p {
+  color: #fff;
+}
+
+.bg-diferencial {
+  background: #000;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.alinhar-text {
+  text-align: center;
+}
+
+/* responsivo */
+@media (max-width: 450px) {
+  .titulo-diferencial {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .container-itens img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .container-itens p {
+    font-size: 1rem;
+  }
+
+  .bg-diferencial {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .flex-diferencial {
+    gap: 60px;
+  }
+}

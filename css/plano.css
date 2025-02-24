@@ -1,0 +1,179 @@
+/* Estilos para a seção de planos */
+.bg-planos {
+  background: #121214;
+  color: #fff;
+  padding: 60px 20px;
+}
+
+.container-planos {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titulo-plano {
+  font-size: 3.5rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  line-height: 1.1;
+}
+
+.titulo-plano::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #df1a00;
+}
+
+/* Flexbox para os Planos */
+.flex-plano {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Estilos dos Planos */
+.plano {
+  background-color: #202024;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plano:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Títulos dos Planos */
+.plano h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+}
+
+/* Preço e Benefícios */
+.preco-div {
+  margin-bottom: 20px;
+}
+
+.flex-preco {
+  font-size: 2.2rem;
+}
+
+.reais {
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+/* Lista de Benefícios */
+.lista-planos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: #ddd;
+  position: relative;
+}
+
+.lista-planos img {
+  width: 20px;
+  height: 20px;
+}
+
+.lista-planos p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Botões */
+.botao {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.05rem;
+  font-size: 1rem;
+  background-color: #df1a00;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  min-width: 100px;
+  width: 100%; /* Use 100% para ocupar a largura do contêiner */
+  max-width: 200px; /* Defina uma largura máxima para evitar que o botão fique muito grande */
+  box-sizing: border-box; /* Inclui padding e borda na largura */
+}
+
+.botao:hover {
+  background-color: #c81400;
+}
+
+.botao:hover {
+  background-color: #b30e00 !important;
+  transform: scale(1.05);
+}
+
+/* Estilos para o plano anual */
+.anual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-recomendado {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  font-size: 0.8rem;
+  display: inline-block;
+  background: #df1a00;
+  color: #ccc;
+  position: absolute;
+  top: -15px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  align-self: center;
+}
+
+/* Media Queries para a seção de planos */
+@media (max-width: 768px) {
+  .titulo-plano {
+    font-size: 2.8rem;
+  }
+
+  .flex-plano {
+    gap: 30px;
+  }
+
+  .plano {
+    width: calc(100% - 40px);
+    margin-bottom: 20px;
+  }
+
+  .botao {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: none; /* Remove a largura máxima em telas menores */
+  }
+}
+
+.anual .botao {
+  align-self: center;
+}
