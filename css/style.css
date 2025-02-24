@@ -539,6 +539,10 @@ img {
   gap: 1rem;
 }
 
+.bg-diferencial .titulo-plano {
+  margin-bottom: 80px;
+}
+
 .container-itens p {
   color: #fff;
 }
