@@ -1,0 +1,130 @@
+/* Fundo da seção */
+.cliente-bg {
+  background: #f9f9f9; /* Fundo claro */
+  padding: 20px 0; /* Reduzido para minimizar o espaço superior e inferior */
+}
+
+/* Container principal */
+.container-cliente {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 20px; /* Removido padding-top para evitar espaço adicional */
+}
+
+/* Título da seção */
+.titulo-plano {
+  color: #404040; /* Cor escura para contraste */
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 0; /* Removido qualquer margem superior */
+  margin-bottom: 60px; /* Espaço inferior controlado */
+  font-weight: 600;
+}
+
+/* Linha decorativa abaixo do título */
+.titulo-plano::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #df1a00; /* Cor de destaque */
+  margin: 12px auto 0; /* Centralizado */
+}
+
+/* Layout flexível dos itens */
+.cliente-flex {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap; /* Itens se ajustam em telas menores */
+}
+
+/* Estilo dos itens individuais */
+.cliente-itens {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px; /* Espaçamento interno entre elementos */
+  background-color: #fff; /* Fundo branco para destacar os itens */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animação suave */
+}
+
+/* Efeito ao passar o mouse nos itens */
+.cliente-itens:hover {
+  transform: translateY(-5px); /* Elevação sutil ao passar o mouse */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
+}
+
+/* Estilo das imagens dos clientes */
+.cliente-itens img {
+  border-radius: 50%; /* Imagens circulares */
+  border: 3px solid #ff6f61; /* Borda colorida ao redor da imagem */
+}
+
+/* Nome dos clientes */
+.cliente-itens h3 {
+  font-size: 1.25rem;
+  color: #333; /* Texto escuro para contraste */
+}
+
+/* Texto dos depoimentos */
+.cliente-itens p {
+  text-align: center;
+  color: #666; /* Texto cinza para suavidade */
+  font-size: 1rem;
+}
+
+/* Responsividade para telas maiores */
+@media (min-width: 1024px) {
+  .cliente-itens p {
+    max-width: 30ch; /* Limite de largura do texto */
+    font-size: 1rem;
+    line-height: 1.5; /* Melhor legibilidade */
+  }
+}
+
+/* Responsividade para telas menores (tablets e celulares) */
+@media (max-width: 1000px) {
+  .cliente-flex {
+    flex-direction: column; /* Itens empilhados em telas menores */
+    align-items: center;
+    gap: 30px; /* Reduzir espaçamento entre itens em telas pequenas */
+    margin-top: 20px;
+  }
+
+  .container-cliente h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+
+  
+}
+
+/* Ajustes finais para dispositivos muito pequenos (ex.: celulares antigos) */
+@media (max-width: 440px) {
+  .container-cliente h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    padding-bottom: 10px;
+  }
+
+  .cliente-itens img {
+    width: 100px;
+    height: 100px;
+    border-width: 2px;
+  }
+
+  .cliente-itens h3 {
+    font-size: 1rem;
+    color: #333;
+  }
+
+
+}

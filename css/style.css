@@ -1,4 +1,6 @@
 @import "./plano.css";
+@import "./cliente.css";
+@import "./accordion.css";
 
 /* Reset estilos */
 body {
@@ -544,7 +546,7 @@ img {
 }
 
 .container-itens p {
-  color: #fff;
+  color: #827f7f;
 }
 
 .bg-diferencial {
@@ -560,8 +562,8 @@ img {
 /* responsivo */
 @media (max-width: 450px) {
   .bg-diferencial .titulo-plano {
-      font-size: 2.5rem;
-      margin-bottom: 60px;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
   }
   .container-itens img {
     width: 60px;

@@ -1,0 +1,76 @@
+/* Fundo da seção */
+.diferencial-bg {
+  background: linear-gradient(
+    135deg,
+    #f0f4f8,
+    #e0e7ef
+  ); /* Gradiente suave de cinza claro */
+  padding: 40px 20px; /* Espaçamento interno */
+}
+
+/* Título do acordeão */
+.titulo-diferencial {
+  color: #333; /* Cor escura para contraste */
+  text-align: center;
+  font-size: 2rem; /* Tamanho do título */
+  margin-bottom: 30px; /* Espaçamento inferior ajustado */
+  font-weight: bold;
+}
+
+/* Container do acordeão */
+.diferencial {
+  max-width: 700px; /* Limita a largura do acordeão */
+  width: 100%; /* Garante que ele seja responsivo */
+  margin: 0 auto; /* Centraliza o acordeão horizontalmente */
+}
+
+/* Estilo dos itens do acordeão */
+.accordion-item {
+  padding: 15px; /* Espaçamento interno dos itens */
+  background-color: #ffffff; /* Fundo branco para destacar os itens */
+  border-radius: 8px; /* Bordas arredondadas nos itens */
+  margin-bottom: 15px; /* Espaçamento entre os itens */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave nos itens */
+}
+
+/* Linha separadora entre os itens */
+.accordion-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 10%;
+  width: 80%; /* Linha ocupa 80% da largura do item */
+  height: 1px;
+}
+
+/* Cabeçalho do acordeão (perguntas) */
+.accordion-header {
+  font-size: 1rem; /* Tamanho da fonte maior para destaque */
+  font-weight: bold;
+  color: #df1a00; /* Cor de destaque para as perguntas (vermelho) */
+}
+
+/* Conteúdo do acordeão (respostas) */
+.accordion-content {
+  font-size: 0.875rem; /* Tamanho da fonte do conteúdo */
+  color: #666; /* Cor mais suave para o texto das respostas */
+  margin-top: 8px; /* Espaçamento entre pergunta e resposta */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .diferencial {
+    max-width: 95%; /* Reduz a largura em telas menores */
+    padding: 0;
+  }
+
+  .titulo-diferencial {
+    font-size: 1.5rem; /* Reduz tamanho do título em telas pequenas */
+    margin-bottom: 20px;
+  }
+
+  .accordion-item {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
