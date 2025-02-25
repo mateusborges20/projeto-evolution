@@ -10,18 +10,18 @@
   margin: 0 auto;
 }
 
-.titulo-plano {
+.titulo-planop {
   font-size: 3.5rem;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #fff;
+  color: #DEDEDE;
   text-align: center;
   margin-bottom: 60px;
   position: relative;
   line-height: 1.1;
 }
 
-.titulo-plano::after {
+.titulo-planop::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -153,7 +153,7 @@
 
 /* Media Queries para a seção de planos */
 @media (max-width: 768px) {
-  .titulo-plano {
+  .titulo-planop {
     font-size: 2.8rem;
   }
 
