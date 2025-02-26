@@ -75,3 +75,7 @@
     font-size: 0.9rem;
   }
 }
+
+body .diferencial-bg .titulo-plano {
+  margin-bottom: 40px;
+}
