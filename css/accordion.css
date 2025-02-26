@@ -3,7 +3,7 @@
   background: linear-gradient(
     135deg,
     #f0f4f8,
-    #e0e7ef
+    #c5c5c5
   ); /* Gradiente suave de cinza claro */
   padding: 40px 20px; /* Espaçamento interno */
 }
@@ -46,14 +46,15 @@
 /* Cabeçalho do acordeão (perguntas) */
 .accordion-header {
   font-size: 1rem; /* Tamanho da fonte maior para destaque */
-  font-weight: bold;
-  color: #df1a00; /* Cor de destaque para as perguntas (vermelho) */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #E23C3C;
 }
 
 /* Conteúdo do acordeão (respostas) */
 .accordion-content {
   font-size: 0.875rem; /* Tamanho da fonte do conteúdo */
-  color: #666; /* Cor mais suave para o texto das respostas */
+  color: #667; /* Cor mais suave para o texto das respostas */
   margin-top: 8px; /* Espaçamento entre pergunta e resposta */
 }
 
@@ -73,8 +74,4 @@
     padding: 10px;
     font-size: 0.9rem;
   }
-}
-
-.accordion-item dd {
-  display: none;
 }

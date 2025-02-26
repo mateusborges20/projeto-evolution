@@ -233,7 +233,7 @@
 }
 
 .texto-footer {
-  color: #fff;
+  color: #9c9c9c;
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -252,11 +252,16 @@
   border-radius: 4px;
 }
 
-.botao-form {
+.bg-footer .formulario .botao-form {
   width: 250px;
   border: 0;
   text-transform: uppercase !important;
   letter-spacing: 0.02rem;
+  background: rgba(211, 211, 211, 0.2);
+}
+
+.bg-footer .formulario .botao-form:hover {
+  background: rgba(211, 211, 211, 0.5) !important; /* Aumenta a opacidade ao passar o mouse */
 }
 
 .div-botao {
