@@ -53,6 +53,8 @@
 
 /* Conteúdo do acordeão (respostas) */
 .accordion-content {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-size: 0.875rem; /* Tamanho da fonte do conteúdo */
   color: #667; /* Cor mais suave para o texto das respostas */
   margin-top: 8px; /* Espaçamento entre pergunta e resposta */
