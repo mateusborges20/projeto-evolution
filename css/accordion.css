@@ -46,16 +46,16 @@
 /* Cabeçalho do acordeão (perguntas) */
 .accordion-header {
   font-size: 1rem; /* Tamanho da fonte maior para destaque */
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
-  color: #E23C3C;
+  color: #e23c3c;
 }
 
 /* Conteúdo do acordeão (respostas) */
 .accordion-content {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 0.900rem; /* Tamanho da fonte do conteúdo */
+  font-size: 0.9rem; /* Tamanho da fonte do conteúdo */
   color: #667; /* Cor mais suave para o texto das respostas */
   margin-top: 8px; /* Espaçamento entre pergunta e resposta */
 }
@@ -80,4 +80,149 @@
 
 body .diferencial-bg .titulo-plano {
   margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .accordion-header {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .primeira-dd {
+    max-width: 36ch;
+  }
+}
+
+.accordion-list dd {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: max-height, opacity;
+}
+
+.accordion-list dd.ativo {
+  max-height: 500px; /* Ajuste esse valor conforme necessário */
+  opacity: 1;
+}
+
+/* Animação de abrir */
+@keyframes abrir {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 500px; /* Ajuste esse valor conforme necessário */
+    opacity: 1;
+  }
+}
+
+/* Animação de fechar */
+@keyframes fechar {
+  0% {
+    max-height: 500px; /* Ajuste esse valor conforme necessário */
+    opacity: 1;
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.accordion-list dd {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 1s cubic-bezier(0.5, 0, 0.1, 1),
+    opacity 1s cubic-bezier(0.5, 0, 0.1, 1);
+  will-change: max-height, opacity;
+}
+
+.accordion-list dd.ativo {
+  max-height: 500px; /* Ajuste esse valor conforme necessário */
+  opacity: 1;
+}
+
+/* Animação de abrir */
+@keyframes abrir {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 500px; /* Ajuste esse valor conforme necessário */
+    opacity: 1;
+  }
+}
+
+/* Animação de fechar */
+@keyframes fechar {
+  0% {
+    max-height: 500px; /* Ajuste esse valor conforme necessário */
+    opacity: 1;
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.accordion-list dd {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 2s cubic-bezier(0.5, 0, 0.1, 1),
+    opacity 2s cubic-bezier(0.5, 0, 0.1, 1);
+  will-change: max-height, opacity;
+}
+
+.accordion-list dd.ativo {
+  max-height: 500px; /* Ajuste esse valor conforme necessário */
+  opacity: 1;
+}
+
+/* Animação de abrir */
+@keyframes abrir {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 500px; /* Ajuste esse valor conforme necessário */
+    opacity: 1;
+  }
+}
+
+/* Animação de fechar */
+@keyframes fechar {
+  0% {
+    max-height: 500px; /* Ajuste esse valor conforme necessário */
+    opacity: 1;
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.accordion-list dd.ativo {
+  animation: abrir 2s forwards;
+}
+
+.accordion-list dd:not(.ativo) {
+  animation: fechar 1.2s forwards;
+}
+
+.accordion-list dt::after {
+  content: "↴";
+  margin-left: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-list dt.ativo::after {
+  content: "⬏";
+  transform: rotate(180deg);
 }
