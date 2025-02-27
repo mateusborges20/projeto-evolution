@@ -226,3 +226,7 @@ body .diferencial-bg .titulo-plano {
   content: "⬏";
   transform: rotate(180deg);
 }
+
+.accordion-list dt {
+  cursor: pointer;
+}
