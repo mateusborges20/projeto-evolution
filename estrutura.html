@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Estrutura</title>
+</head>
+
+<body>
+  <a href="./index.html">home</a>
+  <header class="header-bg">
+    <div class="container-flex">
+      <img class="marca" src="./img/marca.svg" alt="bikcraf" width="200" height="50">
+      <nav aria-label="navegação-primaria">
+        <ul class="flex-itens">
+          <li><a href="./estrutura.html">Estrutura</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#plano">Planos</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+      <!-- Botão do menu hambúrguer -->
+      <div class="menu-hamburguer" id="menuToggle">
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu lateral -->
+  <div class="menu-lateral" id="menuLateral">
+    <button id="closeMenu">X</button>
+    <ul>
+      <li><a href="./estrutura.html">Estrutura</a></li>
+      <li><a href="#diferenciais">Diferenciais</a></li>
+      <li><a href="#plano">Planos</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </div>
+
+  <section class="bg-estrutura">
+    <div class="section-header">
+      <h1 class="titulo-planop">Nossa<br>
+        Estrutura</h1>
+    </div>
+
+    <div class="carousel-container">
+      <span class="carousel-arrow prev">&#10094;</span>
+      <div class="carousel">
+        <div class="carousel-item active">
+          <img src="./img/estutura-img/foto-2-e.jpg" alt="Estrutura da academia">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/estutura-img/foto-5-e.jpg" alt="Equipamentos de musculação">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/estutura-img/foto-4-e.jpg" alt="Área de treinamento funcional">
+        </div>
+      </div>
+      <span class="carousel-arrow next">&#10095;</span>
+    </div>
+  </section>
+  <div class="trial-section">
+    <h2>Ficou em dúvida?</h2>
+    <p>Desafie suas expectativas! Agende uma aula experimental gratuita e descubra o que nos diferencia.</p>
+    <button class="trial-button">Agendar agora</button>
+</div>
+
+  <footer class="bg-footer" id="contato">
+    <div class="container-footer">
+      <div class="informacoes-footer">
+        <div>
+          <a href="./index.html">
+            <img class="marca-footer" src="./img/marca.svg" alt="">
+          </a>
+        </div>
+
+        <div class="funcionamento">
+          <h3 class="poppins-titulo-footer">Hórario de Funcionamento</h3>
+          <p class="roboto-texto-footer cor-c6">segunda á sexta: 6h ás 11:30
+            - 14 ás 22:00
+          </p>
+          <p class="roboto-texto-footer cor-c6">Sábado: 9h00 ás 12:00</p>
+        </div>
+
+        <div class="endereco-rua">
+          <h3 class="poppins-titulo-footer">Endereço:</h3>
+          <p class="roboto-texto-footer endereco-text cor-c6">R. José de Melo, 778, Brodowski - SP</p>
+        </div>
+
+        <div class="endereco endereco-email">
+          <h3 class="poppins-titulo-footer">Email:</h3>
+          <div class="flex-redes">
+            <a href="mailto:mateusmarizdelima@hotmail.com?subject=Assunto%20do%20E-mail&body=Corpo%20do%20E-mail" target="_blank">
+              <img src="./img/email.svg" alt="" width="20" height="20">
+            </a>
+            <p class="roboto-texto-footer cor-c6">mateusmarizdelima@hotmail.com</p>
+          </div>
+        </div>
+        <div class="endereco endereco-wha">
+          <div class="flex-redes">
+            <h3 class="poppins-titulo-footer">Whatsapp:</h3>
+            <p class="roboto-texto-footer cor-c6">+55 16 99192-4415</p>
+          </div>
+        </div>
+        <div class="redes-sociais">
+          <a href="https://www.instagram.com/evolutionfitness70/
+          " target="_blank">
+            <img src="./img/instagram.svg" alt="">
+          </a>
+          <a href="https://pt-br.facebook.com/treinamentoevolution/
+          " target="_blank"">
+            <img src=" ./img/face.svg" alt="">
+          </a>
+        </div>
+      </div>
+
+      <div class="formulario">
+        <h3 class="poppins-titulo-footer">Fale Conosco</h3>
+
+        <form class="flex-formulario">
+          <div class="inputs-item">
+            <input class="roboto-regular-form" type="text" placeholder="Nome Completo:">
+          </div>
+          <div class="inputs-item">
+            <input class="roboto-regular-form " type="number" placeholder=" whatsApp: ">
+          </div>
+
+          <textarea class="roboto-regular-form" placeholder="'Deixe sua dúvida ou comentário.'" rows="5"></textarea>
+
+          <div class="div-botao">
+            <button disabled class="botao">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <p class="texto-footer">Academia Evollution <span>&copy</span> Alguns direitos reservados.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+.trial-section {
+  background-color: #111; /* Cinza mais claro */
+  padding: 40px;
+  text-align: center;
+}
+
+.trial-section h2 {
+  color: #df1a00; 
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.trial-section p {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.trial-button {
+  background-color: #df1a00; /* Vermelho */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  border-radius: 4px;
+}
+
+.trial-button:hover {
+  background-color: #c41300; /* Vermelho mais escuro no hover */
+}

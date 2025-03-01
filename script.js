@@ -21,20 +21,36 @@ menuLinks.forEach((link) => {
   });
 });
 
+//carrosel
+const carousel = document.querySelector(".carousel");
+const items = document.querySelectorAll(".carousel-item");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+let index = 0;
+let autoSlide;
 
-//accordion list
-
-const listAccordion = document.querySelectorAll('.accordion-list dt');
-
-listAccordion[0].classList.add('ativo');
-listAccordion[0].nextElementSibling.classList.add('ativo');
-
-function  iniciarAccordion() {
-  this.classList.toggle('ativo');
-  this.nextElementSibling.classList.toggle('ativo');
+function showSlide() {
+  index = (index + items.length) % items.length;
+  carousel.style.transform = `translateX(${-index * 100}%)`;
 }
 
+function nextSlide() {
+  index++;
+  showSlide();
+  resetAutoSlide();
+}
 
-listAccordion.forEach((item) => {
-  item.addEventListener('click', iniciarAccordion);
-});
+function prevSlide() {
+  index--;
+  showSlide();
+  resetAutoSlide();
+}
+
+function resetAutoSlide() {
+  clearInterval(autoSlide);
+  autoSlide = setInterval(nextSlide, 3000);
+}
+
+prevBtn.addEventListener("click", prevSlide);
+nextBtn.addEventListener("click", nextSlide);
+autoSlide = setInterval(nextSlide, 3000);

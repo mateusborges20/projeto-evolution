@@ -2,6 +2,8 @@
 @import "./cliente.css";
 @import "./accordion.css";
 @import "./footer.css";
+@import "./estrutura.css";
+@import "./chamada.css";
 
 /* Reset estilos */
 body {
