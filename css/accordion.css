@@ -218,7 +218,7 @@ body .diferencial-bg .titulo-plano {
 
 .accordion-list dt::after {
   content: "↴";
-  margin-left: 15px;
+  margin-left: 20px;
   transition: transform 0.3s ease-in-out;
 }
 

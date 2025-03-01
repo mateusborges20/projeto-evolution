@@ -7,25 +7,47 @@
 .bg-estrutura {
   background: #0d0d0d;
 }
+
+/* Container do carrossel */
 .carousel-container {
   position: relative;
+  width: 90%;
   max-width: 800px;
   margin: auto;
   overflow: hidden;
-  padding-bottom: 40px;
+  height: 70vh;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Faixa do carrossel */
 .carousel {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  height: 100%;
 }
+
+/* Itens do carrossel */
 .carousel-item {
   min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Imagens do carrossel */
 .carousel-item img {
-  width: 100%;
-  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   border-radius: 4px;
 }
+
+/* Botões de navegação */
 .carousel-arrow {
   position: absolute;
   top: 50%;
@@ -44,22 +66,118 @@
   align-items: center;
   justify-content: center;
 }
+
 .prev {
   left: 10px;
 }
+
 .next {
   right: 10px;
 }
-.carousel-arrow:hover {
-  background: rgba(255, 0, 0, 0.8);
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 50vh;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
 }
 
-.section-header .titulo-planop {
-  padding-top: 40px;
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 40vh;
+  }
+
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
 }
 
-
-.carousel-arrow:active {
-  background: rgba(0, 0, 0, 0.7) !important;
+@media (max-width: 424px) {
+  .carousel-container {
+    height: 35vh;
+  }
 }
 
+.titulo-estrutura {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.titulo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: white;
+  font-size: 32px !important; /* Tamanho do título */
+  padding-top: 20px;
+  /* animation: scaleIn 1s ease-in-out; */
+}
+
+.tracinho {
+  width: 100px;
+  height: 2px;
+  background-color: #df1a00;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.piscar {
+  animation: piscar 0.5s;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .titulo-estrutura {
+    margin-bottom: 15px;
+  }
+
+  .titulo {
+    font-size: 20px; /* Ajusta o tamanho do título para telas menores */
+  }
+
+  .tracinho {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-estrutura {
+    margin-bottom: 10px;
+  }
+
+  .titulo {
+    font-size: 18px; /* Ajusta o tamanho do título para telas ainda menores */
+  }
+
+  .tracinho {
+    width: 60px;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes piscar {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

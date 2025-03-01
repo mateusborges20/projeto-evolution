@@ -22,6 +22,7 @@ menuLinks.forEach((link) => {
 });
 
 //carrosel
+document.addEventListener("DOMContentLoaded", () => {});
 const carousel = document.querySelector(".carousel");
 const items = document.querySelectorAll(".carousel-item");
 const prevBtn = document.querySelector(".prev");
@@ -54,3 +55,45 @@ function resetAutoSlide() {
 prevBtn.addEventListener("click", prevSlide);
 nextBtn.addEventListener("click", nextSlide);
 autoSlide = setInterval(nextSlide, 3000);
+
+//scrool suave
+
+const linksInternos = document.querySelectorAll('a[href^= "#"');
+console.log(linksInternos);
+
+function scrollToSection(event) {
+  event.preventDefault();
+  const href = event.currentTarget.getAttribute("href");
+
+  const section = document.querySelector(href);
+
+  section.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}
+
+linksInternos.forEach((item) => {
+  item.addEventListener("click", scrollToSection);
+});
+
+//tracinho
+document.addEventListener("DOMContentLoaded", () => {
+  const tracinho = document.querySelector(".tracinho");
+
+  // Espera a animação do título terminar
+  setTimeout(() => {
+    // Função para piscar o tracinho
+    function piscarTracinho() {
+      tracinho.classList.add("piscar");
+      setTimeout(() => {
+        tracinho.classList.remove("piscar");
+      }, 500); // Tempo para o piscar
+    }
+
+    // Piscar quatro vezes
+    for (let i = 0; i < 2; i++) {
+      setTimeout(piscarTracinho, i * 1000); // Piscar a cada 1 segundo
+    }
+  }, 1000); // Tempo para a animação do título terminar
+});
