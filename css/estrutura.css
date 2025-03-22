@@ -207,7 +207,12 @@ body .container-app .lista-planos p {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  
+
+}
+
+
+.container-app {
+  align-self: flex-start;
 }
 
 .flex-app {
@@ -251,4 +256,31 @@ body .container-app .lista-planos p {
 
 .app-text {
   color: rgb(223, 26, 0);
+}
+
+
+.botao-app {
+  text-decoration: none;
+  background: #df1a00;
+  color: #ddd;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.botao-app:hover {
+  background: #c81400;
+}
+
+.botao-app:active {
+    background: #c81400; /* Cor de fundo vermelha */
+    color: white; /* Texto branco para contraste */
+    transform: scale(0.95); /* Efeito de redução ao clicar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: all 0.1s ease; /* Transição suave */
+  
 }
