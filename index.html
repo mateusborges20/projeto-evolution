@@ -331,21 +331,24 @@
       <div class="formulario">
         <h3 class="poppins-titulo-footer">Fale Conosco</h3>
 
-        <form class="flex-formulario">
+        <form class="flex-formulario" action="https://formspree.io/f/mgvakoqb" method="POST">
+
           <div class="inputs-item">
-            <input class="roboto-regular-form" type="text" placeholder="Nome Completo:">
+            <input class="roboto-regular-form" type="text" name="nome" placeholder="Nome Completo:" required>
           </div>
           <div class="inputs-item">
-            <input class="roboto-regular-form " type="number" placeholder=" whatsApp: ">
+            <input class="roboto-regular-form" type="email" name="email" placeholder="email:" required>
           </div>
 
-          <textarea class="roboto-regular-form" placeholder="'Deixe sua dúvida ou comentário.'" rows="5"></textarea>
+          <textarea class="roboto-regular-form" name="mensagem" placeholder="Deixe sua dúvida ou comentário." rows="5" required></textarea>
 
           <div class="div-botao">
-            <button disabled class="botao">Enviar</button>
+            <button type="submit" class="botao">Enviar</button>
           </div>
         </form>
       </div>
+
+    </div>
     </div>
     <p class="texto-footer">Academia Evollution <span>&copy</span> Alguns direitos reservados.</p>
   </footer>
