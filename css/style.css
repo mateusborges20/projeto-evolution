@@ -456,6 +456,7 @@ img {
 
 /* Título estilizado */
 .titulo-historia {
+  margin-bottom: 32px;
   font-family: "Arial", sans-serif; /* Fonte sans-serif */
   font-size: 3.5rem;
   line-height: 1.2;

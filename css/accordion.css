@@ -12,7 +12,7 @@
 .titulo-diferencial {
   color: #333; /* Cor escura para contraste */
   text-align: center;
-  font-size: 2rem; /* Tamanho do título */
+  font-size: 2rem; 
   margin-bottom: 30px; /* Espaçamento inferior ajustado */
   font-weight: bold;
 }
@@ -80,6 +80,7 @@
 
 body .diferencial-bg .titulo-plano {
   margin-bottom: 40px;
+  line-height: 1.2;
 }
 
 @media (max-width: 768px) {
