@@ -4,32 +4,84 @@
   box-sizing: border-box;
 }
 
-.bg-estrutura {
+body,
+html {
+  font-family: "Poppins", sans-serif;
   background: #0d0d0d;
+  color: white;
+  text-align: center;
 }
 
-/* Container do carrossel */
+/* Header */
+.header-bg {
+  background: #0d0d0d;
+  padding: 10px 0;
+}
+
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.flex-itens {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.flex-itens a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.linha {
+  width: 25px;
+  height: 3px;
+  background: white;
+}
+
+/* Seção do Carrossel */
+.bg-estrutura {
+  padding: 40px 0;
+}
+
+.flex-titulo-estrutura {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/* Carrossel */
 .carousel-container {
   position: relative;
   width: 90%;
   max-width: 800px;
-  margin: auto;
+  margin: 0 auto;
   overflow: hidden;
-  height: 70vh;
-  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 50vh;
+  min-height: 200px;
 }
 
-/* Faixa do carrossel */
 .carousel {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  width: 100%;
   height: 100%;
 }
 
-/* Itens do carrossel */
 .carousel-item {
   min-width: 100%;
   height: 100%;
@@ -38,7 +90,6 @@
   justify-content: center;
 }
 
-/* Imagens do carrossel */
 .carousel-item img {
   width: auto;
   max-width: 100%;
@@ -56,12 +107,12 @@
   color: white;
   border: none;
   cursor: pointer;
-  padding: 15px;
-  font-size: 24px;
+  padding: 10px;
+  font-size: 18px;
   z-index: 1000;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,109 +126,130 @@
   right: 10px;
 }
 
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 768px) {
-  .carousel-container {
-    height: 50vh;
-  }
-
-  .carousel-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-container {
-    height: 40vh;
-  }
-
   .carousel-arrow {
     width: 35px;
     height: 35px;
-    font-size: 18px;
+    font-size: 20px;
+  }
+
+  .prev {
+    left: 5px;
+  }
+
+  .next {
+    right: 5px;
   }
 }
 
-@media (max-width: 424px) {
-  .carousel-container {
-    height: 35vh;
-  }
+/* App Fitness */
+.app-fitness-section {
+  background-color: #1a1a1a;
+  padding: 20px 0;
 }
 
-.titulo-estrutura {
+.img-app-container {
+  flex: 1;
   text-align: center;
-  margin-bottom: 20px;
 }
 
-.titulo {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
+.img-app {
+  max-width: 250px;
+  height: auto;
+}
+
+.texto-app-container {
+  flex: 2;
+}
+
+.titulo-app {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
   color: white;
-  font-size: 32px !important; /* Tamanho do título */
-  padding-top: 20px;
-  /* animation: scaleIn 1s ease-in-out; */
 }
 
-.tracinho {
-  width: 100px;
-  height: 2px;
+.descricao-app {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.botao-assinatura {
+  padding: 8px 16px;
   background-color: #df1a00;
-  margin: auto;
-  margin-top: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.piscar {
-  animation: piscar 0.5s;
+.carousel-container {
+  height: 50vh;
+  min-height: 200px;
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .titulo-estrutura {
-    margin-bottom: 15px;
-  }
-
-  .titulo {
-    font-size: 20px; /* Ajusta o tamanho do título para telas menores */
-  }
-
-  .tracinho {
-    width: 80px;
+@media (max-width: 600px) {
+  .carousel-container {
+    height: auto;
+    min-height: 150px; /* Evita espaços grandes */
   }
 }
 
-@media (max-width: 480px) {
-  .titulo-estrutura {
-    margin-bottom: 10px;
+body .container-app .lista-planos p {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  
+
+}
+
+.flex-app {
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+  align-items: center;
+
+}
+
+.texto-app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-app {
+  align-self: flex-start;
+}
+
+.img-app-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* responsivo */
+@media (max-width: 430px) {
+  .flex-app {
+    flex-direction: column;
   }
 
-  .titulo {
-    font-size: 18px; /* Ajusta o tamanho do título para telas ainda menores */
+  .titulo-app {
+    font-size: 1.2rem;
+    align-self: center;
   }
 
-  .tracinho {
-    width: 60px;
+  .container-app {
+    align-self: center;
   }
 }
 
-@keyframes scaleIn {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
 
-@keyframes piscar {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.app-text {
+  color: rgb(223, 26, 0);
 }

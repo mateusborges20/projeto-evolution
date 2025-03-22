@@ -277,7 +277,7 @@ img {
   width: 30px; /* Largura das linhas do menu */
   height: 3px; /* Altura das linhas do menu */
   background-color: #fff; /* Cor das linhas */
-  margin: 0.4rem 0.2rem; /* Espaçamento entre as linhas */
+  margin: 0.10rem 0.1rem !important; /* Espaçamento entre as linhas */
 }
 
 .menu-lateral {

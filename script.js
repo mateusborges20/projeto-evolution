@@ -32,6 +32,7 @@ let autoSlide;
 
 function showSlide() {
   index = (index + items.length) % items.length;
+
   carousel.style.transform = `translateX(${-index * 100}%)`;
 }
 
