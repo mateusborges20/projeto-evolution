@@ -1,0 +1,35 @@
+/* Estilo para a mensagem de sucesso */
+#mensagemSucesso {
+  position: fixed; /* Fixa a mensagem no topo da tela */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  background-color: #28a745; /* Verde de sucesso */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Garante que a mensagem fique acima de outros elementos */
+  display: none; /* Oculta a mensagem inicialmente */
+  animation: fadeInOut 5s ease-in-out; /* Animação de aparecer e desaparecer */
+}
+
+/* Animação para a mensagem */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    top: -50px; /* Começa acima da tela */
+  }
+  10% {
+    opacity: 1;
+    top: 20px; /* Aparece no topo */
+  }
+  90% {
+    opacity: 1;
+    top: 20px; /* Permanece visível */
+  }
+  100% {
+    opacity: 0;
+    top: -50px; /* Desaparece acima da tela */
+  }
+}

@@ -55,3 +55,80 @@ linksInternos.forEach((item) => {
   item.addEventListener("click", scrollToSection);
 });
 
+// Função para limpar os campos
+function limpar() {
+  const inputs = document.querySelectorAll(".inputs-item input");
+  const textarea = document.querySelector("textarea");
+  inputs.forEach((input) => {
+    input.value = "";
+  });
+  textarea.value = "";
+}
+
+// Função para limpar os campos
+function limpar() {
+  const inputs = document.querySelectorAll(".inputs-item input");
+  const textarea = document.querySelector("textarea");
+  inputs.forEach((input) => {
+    input.value = "";
+  });
+  textarea.value = "";
+}
+
+// Função para exibir a mensagem de sucesso
+function exibirMensagemSucesso() {
+  const mensagem = document.getElementById("mensagemSucesso");
+  mensagem.style.display = "block"; // Mostra a mensagem
+}
+
+// Função para limpar os campos
+function limpar() {
+  const inputs = document.querySelectorAll(".inputs-item input");
+  const textarea = document.querySelector("textarea");
+  inputs.forEach((input) => {
+    input.value = "";
+  });
+  textarea.value = "";
+}
+
+// Função para exibir a mensagem de sucesso
+function exibirMensagemSucesso() {
+  const mensagem = document.getElementById("mensagemSucesso");
+  mensagem.style.display = "block"; // Mostra a mensagem
+
+  // Oculta a mensagem após 5 segundos
+  setTimeout(() => {
+    mensagem.style.display = "none";
+  }, 5000); // 5000ms = 5 segundos
+}
+
+// Função para enviar o formulário
+function enviarFormulario(event) {
+  event.preventDefault(); // Impede o envio padrão do formulário
+
+  // Simula o envio do formulário
+  fetch(event.target.action, {
+    method: event.target.method,
+    body: new FormData(event.target),
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        console.log("Formulário enviado com sucesso!");
+        limpar(); // Limpa os campos após o envio
+        exibirMensagemSucesso(); // Exibe a mensagem de sucesso
+      } else {
+        console.log("Erro ao enviar o formulário.");
+      }
+    })
+    .catch((error) => {
+      console.log("Erro ao enviar o formulário:", error);
+    });
+}
+
+// Adiciona o evento de submit ao formulário
+document
+  .getElementById("meuFormulario")
+  .addEventListener("submit", enviarFormulario);

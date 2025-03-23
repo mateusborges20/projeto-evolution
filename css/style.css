@@ -4,6 +4,7 @@
 @import "./footer.css";
 @import "./estrutura.css";
 @import "./chamada.css";
+@import "./formulario.css";
 
 /* Reset estilos */
 body {
@@ -277,7 +278,7 @@ img {
   width: 30px; /* Largura das linhas do menu */
   height: 3px; /* Altura das linhas do menu */
   background-color: #fff; /* Cor das linhas */
-  margin: 0.10rem 0.1rem !important; /* Espaçamento entre as linhas */
+  margin: 0.1rem 0.1rem !important; /* Espaçamento entre as linhas */
 }
 
 .menu-lateral {
@@ -550,7 +551,7 @@ img {
 }
 
 .container-itens p {
-  color: #F7F7F7;
+  color: #f7f7f7;
 }
 
 .bg-diferencial {
@@ -562,7 +563,7 @@ img {
 
 .bg-diferencial .titulo-planop {
   margin-bottom: 100px;
-  color: #F7F7F7;
+  color: #f7f7f7;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 3rem;
@@ -586,7 +587,7 @@ img {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 1.5rem;
-  color: #F7F7F7;
+  color: #f7f7f7;
 }
 
 .itens-diferencial {
