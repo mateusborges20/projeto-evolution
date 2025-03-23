@@ -629,13 +629,13 @@ img {
   }
 }
 
-section {
+.scroll-suave {
   opacity: 0;
   transform: translate3d(-30px, 0, 0) scale(0.95); /* Adiciona escala inicial */
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-section.ativo {
+.scroll-suave.ativo {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1); /* Retorna à escala normal */
 }
