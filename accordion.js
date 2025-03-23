@@ -132,3 +132,31 @@ function enviarFormulario(event) {
 document
   .getElementById("meuFormulario")
   .addEventListener("submit", enviarFormulario);
+
+const sections = document.querySelectorAll("section");
+const windowMetade = window.innerHeight * 0.6;
+
+function animaScroll() {
+  sections.forEach((section, index) => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const isSectionVisible = sectionTop - windowMetade < 0;
+
+    if (isSectionVisible) {
+      section.classList.add("ativo");
+    } else {
+      section.classList.remove("ativo");
+    }
+  });
+}
+
+// Otimiza a animação com requestAnimationFrame
+function debounce(func, wait = 10) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+window.addEventListener("scroll", debounce(animaScroll));
+animaScroll(); // Executa a função ao carregar a página
