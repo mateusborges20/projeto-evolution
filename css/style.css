@@ -12,6 +12,13 @@ body {
   overflow-x: hidden;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -36,7 +43,7 @@ ul {
 }
 
 .header-bg {
-  background: #000;
+  background: #0d0d0d !important;
 }
 
 .flex-itens {
@@ -218,53 +225,101 @@ img {
   display: block;
 }
 
-.descricao-intro {
-  max-width: 1200px;
-  margin: auto;
-  padding-top: 170px;
+/* Imagem da introdução */
+.img-introducao img {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.bg-introducao {
+/* Container principal */
+.container-principal {
   position: relative;
-  background-image: url("../img/foto-intro.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 781px;
-  background-position: center top;
 }
 
-.descricao-intro {
-  max-width: 1200px;
-  margin: auto;
-  padding-top: 170px;
-  text-align: center;
+/* Seção com imagem e chamada */
+.bg-introducao.scroll-suave {
+  position: relative;
 }
 
-.titulo-intro {
+/* Caixa de chamada dentro da imagem */
+.chamada-intro {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%) translateX(50px);
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px 40px;
+  border-radius: 10px;
+  text-align: left;
+  z-index: 2;
+  max-width: 400px;
+  border: 2px solid #ff1e1e;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Animação de entrada */
+@keyframes slideInRight {
+  from {
+    transform: translateY(-50%) translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Texto da chamada */
+.chamada-intro p {
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 4rem;
-  color: #d1cccc;
-  line-height: 1.125;
+  font-size: 2.4rem;
+  line-height: 1.3;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
-.bg-introducao a {
+/* Botão */
+.chamada-intro a {
   display: inline-block;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
+  padding: 12px 28px;
+  background-color: #ff1e1e;
+  color: #fff;
   font-weight: 600;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 0.05rem;
-  font-size: 1.5rem;
-  background-color: rgba(58, 57, 57, 0.8);
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  margin-top: 40px;
+  border-radius: 6px;
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
-.bg-introducao a:hover {
-  background-color: #000;
+.chamada-intro a:hover {
+  background-color: #cc1a1a;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .chamada-intro {
+    position: static;
+    transform: none;
+    opacity: 1;
+    animation: none;
+    margin: 20px auto;
+    text-align: center;
+    max-width: 95%;
+  }
+
+  .chamada-intro p {
+    font-size: 1.8rem;
+  }
+
+  .chamada-intro a {
+    font-size: 1.4rem;
+    padding: 10px 20px;
+  }
 }
 
 /* Estilos para o menu hamburguer e menu lateral */
@@ -374,10 +429,6 @@ img {
   .descricao-intro a {
     font-size: 1.2rem;
   }
-
-  .bg-introducao {
-    height: 600px;
-  }
 }
 
 @media (max-width: 380px) {
@@ -388,10 +439,6 @@ img {
   .descricao-intro a {
     font-size: 1.2rem;
   }
-
-  .bg-introducao {
-    height: 600px;
-  }
 }
 
 @media (max-width: 330px) {
@@ -401,10 +448,6 @@ img {
 
   .descricao-intro a {
     font-size: 0.8rem;
-  }
-
-  .bg-introducao {
-    height: 600px;
   }
 
   .marca {
