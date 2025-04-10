@@ -456,18 +456,16 @@ img {
   }
 }
 
-/* estilos - história */
 /* Fundo da seção */
 .bg-historia {
   position: relative;
-  background: #fff; /* Fundo branco */
-  color: #333; /* Texto em cinza escuro para contraste */
-  padding: 100px 20px;
+  background: #f9f9f9;
+  color: #333;
+  padding: 80px 20px;
 }
 
-/* Wrapper para alinhar os elementos */
+/* Wrapper */
 .historia-wrapper {
-  position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -480,91 +478,157 @@ img {
   align-items: center;
 }
 
-/* Estilização da imagem */
+/* Imagem */
 .container-img {
   position: relative;
+  overflow: hidden; /* Garante que o border-radius funcione */
+  border-radius: 4px; /* Aplica borda ao contêiner */
 }
 
-.image-overlay {
-  position: relative;
-  border-radius: 50%;
-  overflow: hidden; /* Para manter a imagem dentro do círculo */
-  box-shadow: inset -10px -10px 30px rgba(255, 255, 255, 0.1),
-    inset 10px 10px 30px rgba(0, 0, 0, 0.5), 0px 15px 40px rgba(0, 0, 0, 0.3); /* Efeitos de luz e sombra */
-}
-
-.image-overlay img {
+.image-frame {
   width: 100%;
   height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  max-height: 400px;
+  border-radius: 4px; /* Arredondamento aplicado à imagem */
+  display: block;
+  box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.7),
+    10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Título estilizado */
+/* Título */
 .titulo-historia {
   margin-bottom: 32px;
-  font-family: "Arial", sans-serif; /* Fonte sans-serif */
-  font-size: 3.5rem;
+  font-family: "Arial", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
   line-height: 1.2;
-  color: #333; /* Cor cinza escuro */
-  position: relative; /* Necessário para a barra decorativa */
+}
+
+.titulo-historia span {
+  color: #df1a00;
 }
 
 .titulo-historia::after {
-  content: ""; /* Elemento decorativo abaixo do título */
+  content: "";
   display: block;
-  width: 100px; /* Comprimento da barra decorativa */
-  height: 4px; /* Espessura da barra decorativa */
-  background-color: #333; /* Cor da barra decorativa (cinza escuro) */
-  margin-top: 10px; /* Espaçamento entre o título e a barra */
+  width: 80px;
+  height: 4px;
+  background-color: #df1a00;
+  margin-top: 10px;
 }
 
-/* Texto do parágrafo */
+/* Texto */
 .texto-historia {
-  font-family: "Arial", sans-serif; /* Fonte sans-serif */
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-family: "Arial", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
-/* Assinatura estilizada */
+/* Assinatura */
 .assinatura-historia {
-  font-family: "Arial", serif; /* Fonte serif diferente para a assinatura */
-  font-style: normal;
-  font-size: 1.1rem; /* Tamanho da fonte da assinatura */
-  margin-top: 20px; /* Espaçamento acima da assinatura */
-  line-height: 1.5;
+  font-family: "Arial", serif;
+  font-size: 1.1rem;
+  margin-top: 20px;
 }
 
-/* Elementos decorativos flutuantes */
-.floating-circle-large,
-.floating-circle-small {
-  position: absolute;
-}
-
-.floating-circle-large {
-  width: 300px;
-  height: 300px;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-  top: -150 px;
-}
-
-.floating-circle-small {
-  width: 150 px;
-  height: 150 px;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-  bottom: -75 px;
-  right: -75 px;
-}
-
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 768px) {
+  .bg-historia {
+    padding: 30px 20px 5px 20px; /* Reduz padding top e bottom no mobile */
+  }
+
   .grid-historia {
-    grid-template-columns: 1fr; /* Empilha colunas em telas menores */
+    grid-template-columns: 1fr;
     gap: 30px;
   }
 
+  .container-historia {
+    order: -1; /* Coloca o texto antes da imagem */
+  }
+
   .titulo-historia {
-    font-size: 2.5rem; /* Cabeçalho menor em telas menores */
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+  }
+
+  .container-img {
+    margin-bottom: 20px;
+    margin: auto;
+  }
+}
+
+/* Estado inicial: invisível e fora do lugar */
+.titulo-historia {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Quando a seção .bg-historia ganha a classe .ativo, anima o título */
+.bg-historia.ativo .titulo-historia {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Animação do fade + movimento */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação da barrinha decorativa */
+@keyframes growBar {
+  0% {
+    transform: scaleX(0);
+  }
+  60% {
+    transform: scaleX(1.4);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Barrinha decorativa animada quando a seção entra */
+.bg-historia.ativo .titulo-historia::after {
+  animation: growBar 1s ease-in-out forwards;
+  transform-origin: left;
+}
+
+.container-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px; /* Garante que o zoom respeite o arredondado */
+}
+
+.image-frame {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  max-height: 400px;
+  border-radius: 4px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.7),
+    10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito no hover (desktop) */
+.container-img:hover .image-frame {
+  transform: scale(1.05);
+  box-shadow: -12px -12px 24px rgba(255, 255, 255, 0.8),
+    12px 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeito no toque (mobile): usa :active como fallback */
+@media (hover: none) {
+  .container-img:active .image-frame {
+    transform: scale(1.05);
+    box-shadow: -12px -12px 24px rgba(255, 255, 255, 0.8),
+      12px 12px 24px rgba(0, 0, 0, 0.3);
   }
 }
 
