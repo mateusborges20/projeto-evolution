@@ -54,16 +54,26 @@ ul {
 .flex-itens a {
   text-decoration: none;
   padding: 10px 12px;
-  background: rgba(0, 0, 0, alpha);
+  border: 2px solid rgba(223, 26, 0, 0.2); /* Borda suave */
   border-radius: 4px;
   color: #fff;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1.1rem;
+  background: none;
+  transition: border-color 0.3s, color 0.2s, transform 0.2s;
 }
 
 .flex-itens a:hover {
   color: #df1a00 !important;
+  border-color: #df1a00;
+  transform: scale(1.05);
+}
+
+.flex-itens a:active {
+  color: #fff !important;
+  border-color: #b30e00;
+  transform: scale(0.97);
 }
 
 img {

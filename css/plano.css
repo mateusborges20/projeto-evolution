@@ -14,7 +14,7 @@
   font-size: 3.5rem;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #DEDEDE;
+  color: #dedede;
   text-align: center;
   margin-bottom: 60px;
   position: relative;
@@ -127,6 +127,11 @@
 .botao:hover {
   background-color: #b30e00 !important;
   transform: scale(1.05);
+}
+
+.botao:active {
+  background-color: #8c0b00 !important;
+  transform: scale(0.98);
 }
 
 /* Estilos para o plano anual */

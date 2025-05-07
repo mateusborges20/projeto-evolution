@@ -318,3 +318,11 @@
     justify-self: center;
   }
 }
+
+.div-botao button {
+  cursor: pointer !important;
+}
+
+.flex-redes img {
+  cursor: pointer !important;
+}
