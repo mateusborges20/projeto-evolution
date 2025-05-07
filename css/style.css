@@ -259,31 +259,31 @@ img {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   font-family: "Poppins", sans-serif;
   animation: slideInRight 1s ease-out forwards;
-  animation-delay: 0.3s;
 }
 
 /* Chamada da direita */
 .chamada-direita {
   right: 5%;
   animation-name: slideInRight;
+  animation-delay: 0.8s; /* Novo delay */
 }
 
-/* Chamada da esquerda - agora só fundo escuro e borda vermelha */
+/* Chamada da esquerda - fundo escuro, borda vermelha */
 .chamada-esquerda {
   left: 5%;
   text-align: left;
-  background: rgba(0, 0, 0, 0.85); /* Fundo escuro, sem gradiente vermelho */
-  border: 2px solid #ff1e1e; /* Mesma borda da direita */
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid #ff1e1e;
   box-shadow: 0 6px 32px rgba(255, 30, 30, 0.1);
   animation-name: slideInLeft;
-  animation-delay: 0.6s;
+  animation-delay: 1.2s; /* Novo delay */
 }
 
 .chamada-esquerda h2 {
   font-size: 2.1rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #e0e0e0; /* Cinza claro, sofisticado */
+  color: #e0e0e0; /* Cinza claro */
   letter-spacing: 0.5px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   border-left: 4px solid #fff;
