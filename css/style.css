@@ -243,12 +243,11 @@ img {
   position: relative;
 }
 
-/* Caixa de chamada dentro da imagem */
+/* ==== CHAMADAS SOBRE A IMAGEM ==== */
 .chamada-intro {
   position: absolute;
   top: 50%;
-  right: 5%;
-  transform: translateY(-50%) translateX(50px);
+  transform: translateY(-50%);
   opacity: 0;
   background: rgba(0, 0, 0, 0.7);
   padding: 30px 40px;
@@ -258,11 +257,56 @@ img {
   max-width: 400px;
   border: 2px solid #ff1e1e;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  font-family: "Poppins", sans-serif;
   animation: slideInRight 1s ease-out forwards;
   animation-delay: 0.3s;
 }
 
-/* Animação de entrada */
+/* Chamada da direita */
+.chamada-direita {
+  right: 5%;
+  animation-name: slideInRight;
+}
+
+/* Chamada da esquerda - agora só fundo escuro e borda vermelha */
+.chamada-esquerda {
+  left: 5%;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.85); /* Fundo escuro, sem gradiente vermelho */
+  border: 2px solid #ff1e1e; /* Mesma borda da direita */
+  box-shadow: 0 6px 32px rgba(255, 30, 30, 0.1);
+  animation-name: slideInLeft;
+  animation-delay: 0.6s;
+}
+
+.chamada-esquerda h2 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #e0e0e0; /* Cinza claro, sofisticado */
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  border-left: 4px solid #fff;
+  padding-left: 12px;
+  line-height: 1.15;
+}
+
+.chamada-esquerda h2 .destaque-evolution {
+  color: #ff1e1e;
+  background: rgba(255, 30, 30, 0.07);
+  border-radius: 4px;
+  padding: 0 3px;
+  transition: background 0.3s;
+}
+
+.chamada-esquerda p {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: #fff;
+  opacity: 0.92;
+}
+
+/* Animação entrada direita */
 @keyframes slideInRight {
   from {
     transform: translateY(-50%) translateX(50px);
@@ -274,9 +318,20 @@ img {
   }
 }
 
-/* Texto da chamada */
-.chamada-intro p {
-  font-family: "Poppins", sans-serif;
+/* Animação entrada esquerda */
+@keyframes slideInLeft {
+  from {
+    transform: translateY(-50%) translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Texto da chamada direita */
+.chamada-direita p {
   font-size: 2.4rem;
   line-height: 1.3;
   color: #ffffff;
@@ -284,7 +339,7 @@ img {
 }
 
 /* Botão */
-.chamada-intro a {
+.chamada-direita a {
   display: inline-block;
   padding: 12px 28px;
   background-color: #ff1e1e;
@@ -296,11 +351,11 @@ img {
   transition: background 0.3s ease;
 }
 
-.chamada-intro a:hover {
+.chamada-direita a:hover {
   background-color: #cc1a1a;
 }
 
-/* Responsivo */
+/* ==== RESPONSIVO ==== */
 @media (max-width: 768px) {
   .chamada-intro {
     position: static;
@@ -310,6 +365,9 @@ img {
     margin: 20px auto;
     text-align: center;
     max-width: 95%;
+    border: 2px solid #ff1e1e;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   }
 
   .chamada-intro p {
@@ -319,6 +377,66 @@ img {
   .chamada-intro a {
     font-size: 1.4rem;
     padding: 10px 20px;
+  }
+
+  /* Esconde a chamada da esquerda no mobile */
+  .chamada-esquerda {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .img-introducao {
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
+    max-height: 900px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-introducao img {
+    width: 100vw;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    filter: brightness(0.85) saturate(1.1); /* imagem menos escura */
+    background: #000;
+    transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: transform;
+  }
+
+  .img-introducao::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      /* menos opaco */ rgba(0, 0, 0, 0.1) 100% /* menos opaco */
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .chamada-intro {
+    z-index: 2;
+  }
+}
+
+/* Ajustes finos para telas grandes */
+@media (min-width: 1200px) {
+  .chamada-intro {
+    max-width: 480px;
+    padding: 40px 52px;
+  }
+  .chamada-esquerda h2 {
+    font-size: 2.5rem;
+  }
+  .chamada-esquerda p {
+    font-size: 1.25rem;
   }
 }
 
